@@ -4,7 +4,7 @@ from flask import Flask
 def create_app(test_conf=None):
     app = Flask(__name__, instance_relative_config=True)
 
-    app.config.from_mapping(SECRET_KEY='dev', DATABASE=os.path.join(app.instance_path, 'app.sqlite'))
+    app.config.from_mapping(SECRET_KEY='dev', DATABASE=os.path.join(app.instance_path, 'willr.sqlite'))
 
     if test_conf:
         app.config.from_mapping(test_conf)
@@ -20,4 +20,7 @@ def create_app(test_conf=None):
     def hi():
         return "<h1>Hi Willr</h1>"
     
+    from . import db
+    db.init_app(app)
+
     return app
