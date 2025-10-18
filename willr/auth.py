@@ -38,7 +38,7 @@ def login():
         password = request.form.get("password")
         db = get_db()
         err = None
-        user = db.execute("SELECT * from user where username = ?", (username)).fetchone()
+        user = db.execute("SELECT * from user where username = ?", (username,)).fetchone()
         if not user:
             err = f"{username} Not Found"
         elif not check_password_hash(user["password"], password):
