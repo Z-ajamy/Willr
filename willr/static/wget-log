@@ -1,0 +1,6 @@
+--2025-10-19 01:42:06--  https://videos.openai.com/az/vg-assets/assets%2Ftask_01k7wq7rzget39z7mr33hy6krt%2F1760826809_img_0.webp?se=2025-10-24T22%3A33%3A50Z
+Resolving videos.openai.com (videos.openai.com)... 172.64.148.99, 104.18.39.157, 2a06:98c1:3102::ac40:9463, ...
+Connecting to videos.openai.com (videos.openai.com)|172.64.148.99|:443... connected.
+HTTP request sent, awaiting response... 400 Bad Request
+2025-10-19 01:42:06 ERROR 400: Bad Request.
+
