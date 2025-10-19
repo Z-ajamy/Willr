@@ -1,24 +1,40 @@
+/**
+ * Willr Blog Application Stylesheet
+ * 
+ * Defines the visual styling for the blog application including layout,
+ * typography, navigation, forms, and interactive elements.
+ */
+
+/* Base HTML and body styling with centered layout */
 html { 
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; 
     background: #eee; 
     padding: 1rem; 
 }
+
 body { 
     max-width: 960px; 
     margin: 0 auto; 
     background: white; 
 }
+
+/* Link styling with hover effects */
 a { 
     color: #990000;
     text-decoration: none;
 }
+
 a:hover {
     text-decoration: underline;
 }
+
+/* Horizontal rule styling */
 hr { 
     border: none; 
     border-top: 1px solid lightgray; 
 }
+
+/* Navigation bar layout and styling */
 nav { 
     background: white;
     display: flex; 
@@ -26,42 +42,59 @@ nav {
     padding: 0 0.5rem;
     border-bottom: 2px solid #990000;
 }
+
 nav h1 { 
     flex: auto; 
     margin: 0; 
 }
+
+/* Logo styling in navigation */
 #logo {
     height: 40px;
     width: auto;
     padding: 0.5rem 0;
     vertical-align: middle;
 }
+
+/* Navigation menu list styling */
 nav ul  { 
     display: flex; 
     list-style: none; 
     margin: 0; 
     padding: 0; 
 }
+
 nav ul li a, nav ul li span, header .action { 
     display: block; 
     padding: 0.5rem; 
     font-weight: bold;
 }
+
+/* Heading styles with serif font */
 h1 { 
     font-family: serif;
     color: #333;
     margin: 1rem 0; 
 }
-.content { padding: 0 1rem 1rem; }
+
+/* Main content area padding */
+.content { 
+    padding: 0 1rem 1rem; 
+}
+
+/* Content header with flexible layout */
 .content > header { 
     border-bottom: 1px solid lightgray; 
     display: flex; 
     align-items: flex-end; 
 }
+
 .content > header h1 { 
     flex: auto; 
     margin: 1rem 0 0.25rem 0; 
 }
+
+/* Flash message styling for user feedback */
 .flash { 
     margin: 1em 0; 
     padding: 1em; 
@@ -69,39 +102,58 @@ h1 {
     border: 1px solid #990000;
     color: #333;
 }
+
+/* Blog post header layout */
 .post > header { 
     display: flex; 
     align-items: flex-end; 
     font-size: 0.85em; 
 }
-.post > header > div:first-of-type { flex: auto; }
+
+.post > header > div:first-of-type { 
+    flex: auto; 
+}
+
 .post > header h1 { 
     font-size: 1.5em; 
     margin-bottom: 0; 
 }
+
+/* Post metadata styling (author and date) */
 .post .about { 
     color: slategray; 
     font-style: italic; 
 }
-.post .body { white-space: pre-line; }
+
+/* Post body with preserved line breaks */
+.post .body { 
+    white-space: pre-line; 
+}
+
+/* Form layout and styling */
 .content form { 
     margin: 1em 0; 
     display: flex; 
     flex-direction: column; 
 }
+
 .content label { 
     font-weight: bold; 
     margin-bottom: 0.5em; 
 }
+
 .content input, .content textarea { 
     margin-bottom: 1em; 
     border: 1px solid #ccc;
     padding: 0.5em;
 }
+
 .content textarea { 
     min-height: 12em; 
     resize: vertical; 
 }
+
+/* Submit button styling with hover effect */
 input[type=submit] { 
     align-self: start; 
     min-width: 10em;
@@ -114,7 +166,12 @@ input[type=submit] {
     text-transform: uppercase;
     transition: background 0.2s;
 }
+
 input[type=submit]:hover {
     background: #7a0000;
 }
-input.danger { color: #cc2f2e; }
+
+/* Danger button styling for destructive actions */
+input.danger { 
+    color: #cc2f2e; 
+}

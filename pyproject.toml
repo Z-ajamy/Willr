@@ -1,0 +1,14 @@
+# Python project configuration file for Willr blog application
+# Defines project metadata, dependencies, and build system configuration
+
+[project]
+name = "willr"
+version = "1.0.0"
+description = "A customized blog application built with Flask, featuring user authentication and post management."
+dependencies = [
+    "flask",
+]
+
+[build-system]
+requires = ["flit_core<4"]
+build-backend = "flit_core.buildapi"

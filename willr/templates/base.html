@@ -1,29 +1,49 @@
 <!doctype html>
-<title>{% block title %}{% endblock %} - Willr</title>
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-<nav>
-    <h1>
-        <a href="{{ url_for('hi') }}">
-            <img src="{{ url_for('static', filename='logo.png') }}" alt="Willr Logo" id="logo">
-        </a>
-    </h1>
-  <ul>
-    {% if g.user %}
-      <li><span>{{ g.user['username'] }}</span>
-      <li><a href="{{ url_for('auth.logout') }}">Log Out</a>
-    {% else %}
-      <li><a href="{{ url_for('auth.register') }}">Register</a>
-      <li><a href="{{ url_for('auth.login') }}">Log In</a>
-    {% endif %}
-  </ul>
-</nav>
-<section class="content">
-  <header>
-    {% block header %}{% endblock %}
-  </header>
-  {% for message in get_flashed_messages() %}
-    <div class="flash">{{ message }}</div>
-  {% endfor %}
-  
-  {% block content %}{% endblock %}
-</section>
+<!-- 
+Base template for the Willr application.
+Provides the core HTML structure, navigation, and content blocks for all pages.
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %} - Willr</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Main navigation bar with logo and user authentication links -->
+    <nav>
+        <h1>
+            <a href="{{ url_for('index') }}">
+                <img src="{{ url_for('static', filename='logo.png') }}" alt="Willr Logo" id="logo">
+            </a>
+        </h1>
+        <ul>
+            {% if g.user %}
+                <!-- Authenticated user menu -->
+                <li><span>Welcome, {{ g.user['username'] }}</span></li>
+                <li><a href="{{ url_for('auth.logout') }}">Log Out</a></li>
+            {% else %}
+                <!-- Guest user menu -->
+                <li><a href="{{ url_for('auth.register') }}">Register</a></li>
+                <li><a href="{{ url_for('auth.login') }}">Log In</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+
+    <!-- Main content section with flash messages and page-specific content -->
+    <section class="content">
+        <header>
+            {% block header %}{% endblock %}
+        </header>
+        
+        <!-- Display flash messages for user feedback -->
+        {% for message in get_flashed_messages() %}
+            <div class="flash">{{ message }}</div>
+        {% endfor %}
+        
+        <!-- Page-specific content -->
+        {% block content %}{% endblock %}
+    </section>
+</body>
+</html>

@@ -1,15 +1,21 @@
+<!-- 
+User registration template.
+Provides a form for new users to create an account with username and password.
+Extends the base template and handles form submission to create new user accounts.
+-->
 {% extends 'base.html' %}
 
 {% block header %}
-  <h1>{% block title %}Register{% endblock %}</h1>
+  <h1>{% block title %}Create Your Account{% endblock %}</h1>
 {% endblock %}
 
 {% block content %}
+  <!-- Registration form with required username and password fields -->
   <form method="post">
     <label for="username">Username</label>
     <input name="username" id="username" required>
     <label for="password">Password</label>
     <input type="password" name="password" id="password" required>
-    <input type="submit" value="Register">
+    <input type="submit" value="Sign Up">
   </form>
 {% endblock %}

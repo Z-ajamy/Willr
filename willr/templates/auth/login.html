@@ -1,15 +1,21 @@
+<!-- 
+User login template.
+Provides a form for existing users to authenticate and access their account.
+Extends the base template and handles form submission for user authentication.
+-->
 {% extends 'base.html' %}
 
 {% block header %}
-  <h1>{% block title %}Log In{% endblock %}</h1>
+  <h1>{% block title %}Welcome Back{% endblock %}</h1>
 {% endblock %}
 
 {% block content %}
+  <!-- Login form with required username and password fields -->
   <form method="post">
     <label for="username">Username</label>
     <input name="username" id="username" required>
     <label for="password">Password</label>
     <input type="password" name="password" id="password" required>
-    <input type="submit" value="Log In">
+    <input type="submit" value="Sign In">
   </form>
 {% endblock %}

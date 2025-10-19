@@ -1,0 +1,21 @@
+<!-- 
+Blog post creation template.
+Allows authenticated users to create new blog posts with a title and body.
+Extends the base template and provides a form for post creation.
+-->
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Create New Post{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <!-- Post creation form with preserved form data on validation errors -->
+  <form method="post">
+    <label for="title">Title</label>
+    <input name="title" id="title" value="{{ request.form['title'] }}" required>
+    <label for="body">Body</label>
+    <textarea name="body" id="body">{{ request.form['body'] }}</textarea>
+    <input type="submit" value="Create Post">
+  </form>
+{% endblock %}
